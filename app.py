@@ -2,12 +2,12 @@ import streamlit as st
 from prompt_multi_tables import generate_prompts_from_pdf
 import io
 
-st.set_page_config(page_title="Prompt Generator (PDF → Questions Only)", layout="wide")
+st.set_page_config(page_title="Prompt Generator (PDF → Questions)", layout="wide")
 st.title("Prompt Generator")
 
 st.markdown("""
 Upload a PDF that describes your schema/metrics/relationships/business rules.
-I'll generate **only** natural-language question prompts (no SQL).
+I'll generate **only** natural-language question prompts.
 """)
 
 uploaded = st.file_uploader("Upload schema PDF", type=["pdf"])
@@ -45,3 +45,4 @@ if st.session_state.prompts:
         file_name="generated_prompts.txt",
         mime="text/plain",
     )
+
