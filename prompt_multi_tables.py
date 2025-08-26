@@ -7,7 +7,7 @@ from typing import BinaryIO
 
 # Initialize the OpenAI client
 
-# ⚠️ Read API key from env: set OPENAI_API_KEY in your environment
+# Read API key from env: set OPENAI_API_KEY in your environment
 client = OpenAI()  # uses OPENAI_API_KEY
 
 def extract_text_from_pdf(file: BinaryIO) -> str:
@@ -72,3 +72,4 @@ PDF content:
             seen.add(p)
             unique.append(p)
     return unique
+
